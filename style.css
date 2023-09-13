@@ -1,0 +1,43 @@
+/* Button component */
+body * {
+    color: rgba(0, 0, 0, .8)
+}
+
+.btn {
+    background: none;
+    border: solid 1px #D9D9D9;
+    padding: 4px 15px;
+    font-size: 14px;
+}
+
+
+.btn-icon-only svg {
+    width: 14px;
+    height: 100%;
+}
+
+.btn-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+
+    padding: 0;
+    border-radius: 200%;
+
+    box-shadow: 0px 2px 0px 0px rgba(117, 95, 95, 0.04);
+
+}
+
+/* Link component */
+.link {
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #1890ff;
+}
+
