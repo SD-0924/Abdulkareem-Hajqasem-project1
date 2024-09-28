@@ -1,0 +1,125 @@
+/** Header Styles **/
+
+.welcome-container {
+    margin-top: 50px;
+    height: fit-content;
+}
+
+.welcome-text {
+    margin: 0;
+    color: var(--highlight-green);
+}
+
+.website-info-text {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--body-test-color);
+    line-height: 14px;
+}
+
+.header-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.favourites-button,
+.color-mode-button {
+    padding: 5px;
+    background-color: var(--button-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.header-title {
+    color: var(--primary-color);
+    font-weight: 200;
+}
+
+.navbar {
+    background-color: var(--button-bg-color);
+    padding-bottom: 30px;
+}
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 45px;
+    align-items: center;
+}
+
+.header-title {
+    margin: 0;
+}
+
+.bottom-nav {
+    background-color: var(--button-bg-color);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.triangle-green {
+    position: absolute;
+    width: 100vw;
+    height: 75px;
+    background-color: var(--highlight-green);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 0%);
+    z-index: 3;
+}
+
+.triangle-blue {
+    position: absolute;
+    width: 100vw;
+    height: 75px;
+    background: linear-gradient(to right, var(--primary-color), var(--highlight-green));
+    clip-path: polygon(0 0, 90% 0, 0 85%, 0% 100%);
+    z-index: 5;
+}
+
+.label{
+    font-size: 11px;
+    padding-left: 5px;
+    color: var(--body-test-color)
+}
+
+@media screen and (max-width:1200px) {
+    .triangle-blue, .triangle-green {
+        height: 60px;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .triangle-blue, .triangle-green {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:620px) {
+    .triangle-blue, .triangle-green {
+        height: 40px;
+    }
+
+    .welcome-container{
+        margin-left: 17px;
+    }
+}
+
+@media (max-width: 700px) {
+    .color-button-text, .favourites-button-text {
+        display: none;
+    }
+
+    .top-nav {
+        padding: 20px 22px;
+    }
+
+    .favourites-button, .color-mode-button {
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+}

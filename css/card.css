@@ -1,0 +1,66 @@
+/**Card Styles**/
+
+.cards-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.card {
+    background-color: var(--button-bg-color);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-info-container {
+    padding: 15px 0 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.topics-title {
+    padding: 20px 0 20px 0;
+}
+
+.rate-author-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.language-name, .card-type  {
+    color: var(--body-test-color);
+}
+
+.card-type {
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+
+.img-container {
+    height: 150px;
+    overflow: hidden;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.star{
+    color: gold;
+    padding-bottom: 7px;
+}
+
+.author-name{
+    color: var(--author-name);
+}

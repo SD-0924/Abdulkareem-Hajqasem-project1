@@ -1,0 +1,50 @@
+/** Global Variables **/
+:root {
+    /* Color Palette */
+    --primary-color: #0768AC;
+    --highlight-green: #03C180;
+    --background-color: #F0F9FF;
+    --button-bg-color: white;
+    --border-color: #DDDDDD;
+    --body-test-color: #333333;
+    --author-name: #7c7c7c;
+
+    /* Font */
+    --main-font: 'Nunito Sans', sans-serif;
+}
+
+/** Global Styles **/
+* {
+    font-family: var(--main-font);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+span{
+    color: var(--body-test-color);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+@media (max-width: 500px) {
+    .content-container {
+        padding: 20px 10px;
+    }
+}

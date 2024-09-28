@@ -1,0 +1,22 @@
+/**Footer Styles**/
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color);
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-heart{
+    font-size: 20px;
+    color: #DC143C;
+}
+
+.footer-text{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--body-test-color);
+    font-weight: 300;
+}
