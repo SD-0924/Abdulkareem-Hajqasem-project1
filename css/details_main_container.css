@@ -33,7 +33,7 @@
     width: 75%;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1400px) {
     .language-info-card-container{
         justify-content: end;
         padding-left: 15px;

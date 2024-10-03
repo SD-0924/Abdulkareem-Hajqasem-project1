@@ -31,7 +31,7 @@ img {
     padding-bottom: 7px;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1400px) {
     .details-card{
         position: static;
     }
