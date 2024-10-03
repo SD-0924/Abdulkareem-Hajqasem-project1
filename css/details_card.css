@@ -5,7 +5,7 @@
     border: 1px solid var(--border-color);
     position: absolute;
     top: 25px;
-    right: 350px;
+    right: 280px;
 }
 
 .card-info-container {
@@ -31,7 +31,7 @@ img {
     padding-bottom: 7px;
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1250px) {
     .details-card{
         position: static;
     }

@@ -25,7 +25,7 @@
 
 .info-main-container{
     display: flex;
-    width: 60%;
+    width: 55%;
     justify-content: end;
 }
 
@@ -33,7 +33,7 @@
     width: 70%;
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1250px) {
     .language-info-card-container{
         justify-content: end;
         padding-left: 15px;
