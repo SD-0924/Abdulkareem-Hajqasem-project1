@@ -23,6 +23,7 @@
 
 .search-input {
     border: none;
+    background-color: var(--button-bg-color);
 }
 
 .sort-filter-container {
@@ -33,6 +34,8 @@
 .filter-dropdown, .sort-dropdown {
     border: none;
     width: 100%;
+    background-color: var(--button-bg-color);
+    color: var(--body-test-color);
 }
 
 .sort-dropdown-container, .filter-dropdown-container {

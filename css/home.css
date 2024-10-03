@@ -13,6 +13,16 @@
     --main-font: 'Nunito Sans', sans-serif;
 }
 
+.dark-mode{
+    --primary-color: #0768AC;
+    --highlight-green: #03C180;
+    --background-color: #282828;
+    --button-bg-color: #1A1A1A;
+    --border-color: #000000;
+    --body-test-color: #EDEDED;
+    --author-name: #7c7c7c;
+}
+
 /** Global Styles **/
 * {
     font-family: var(--main-font);
@@ -23,6 +33,10 @@ html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+.icon{
+    color: var(--body-test-color);
 }
 
 h1,
