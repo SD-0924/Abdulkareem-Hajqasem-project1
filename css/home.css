@@ -8,6 +8,7 @@
     --border-color: #DDDDDD;
     --body-test-color: #333333;
     --author-name: #7c7c7c;
+    --details-title:#1c9e72;
 
     /* Font */
     --main-font: 'Nunito Sans', sans-serif;
@@ -55,6 +56,12 @@ span{
     display: flex;
     flex-direction: column;
     height: 100vh;
+}
+
+@media (min-width: 2000px) {
+    .main-container {
+        align-items: center;
+    }
 }
 
 @media (max-width: 500px) {

@@ -58,6 +58,12 @@ textarea:focus, input:focus, select:focus {
     color: var(--body-test-color);
 }
 
+@media (min-width: 20000px) {
+    .content-container {
+        width: 1440px;
+    }
+}
+
 @media (max-width: 670px) {
     .search-container {
         grid-template-columns: 100%;

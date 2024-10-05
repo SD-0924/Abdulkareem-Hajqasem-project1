@@ -20,3 +20,9 @@
     color: var(--body-test-color);
     font-weight: 300;
 }
+
+@media (min-width: 2000px) {
+    .footer {
+        width: 1440px;
+    }
+}
