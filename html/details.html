@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/details_main_container.css" />
     <link rel="stylesheet" href="../css/details_card.css" />
     <link rel="stylesheet" href="../css//footer.css">
+    <link rel="stylesheet" href="../css//fav.css">
 </head>
 
 <body>
@@ -42,79 +43,22 @@
             </nav>
         </header>
         <main class="details-container">
-            <div class="language-info-card-container">
-                <div class="info-main-container">
-                    <div class="info-title">
-                        <p class="card-type">Web Development Language</p>
-                        <div class="by-author">
-                        <h2 class="card-name">JavaSCript</h2>
-                        <div class="by-author-container">
-                        <span class="by">by</span>
-                        <a href="">Sarah Smith</a>
-                    </div>
-                    </div>
-                    <div class="stars">
-                        <ion-icon name="star" class="star"></ion-icon>
-                        <ion-icon name="star" class="star"></ion-icon>
-                        <ion-icon name="star" class="star"></ion-icon>
-                        <ion-icon name="star" class="star"></ion-icon>
-                        <ion-icon name="star-half-outline" class="star"></ion-icon>
-                    </div>
-                </div>
-                <p class="card-full-info">
-                    JavaScript is a high-level programming language that is used to
-                    create interactive web pages and dynamic user interfaces. It
-                    allows for the creation of complex, responsive web applications
-                    that can run both on the client side (in the web browser) and the
-                    server side (using Node.js). JavaScript is one of the most
-                    widely-used programming languages in web development.
-                </p>
+            <div class="details-main-container">
+
             </div>
-            <div class="details-card">
-                <div class="img-container">
-                    <img src="../assets/javascript.jpg" alt="" />
-                </div>
-                <div class="card-info-container">
-                    <div class="card-title-container">
-                        <p class="author-card">JavaScript</p>
-                        <div class="link-container">
-                            <span>by</span>
-                            <a href="">Sarah Smith</a>
-                        </div>
-                    </div>
-                    <div class="favourites-button-container">
-                        <p class="interested-text">Interested about this topic?</p>
-                        <button class="add-to-favourits-button">
-                            <span class="add-to-favourits-button-span">Add to Favourites <ion-icon name="heart-outline" class="add-to-favourits-button__heart"></ion-icon></span>
-                        </button>
-                        <div class="creadits-container">
-                            <span class="credits">Credits</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="add-to-favourits-button-mobile">
-                <span class="add-to-favourits-button__span"><ion-icon name="heart-outline" class="favourites-heart"></ion-icon></span>
-            </button>
-            <img src="../assets/javascript.jpg" alt="" class="image" />
-    </div>
-    <div class="features-main-container">
-        <div class="features-container">
-            <h2 class="feature-title">Javascript</h2>
-            <div class="feature"> <ion-icon name="checkmark-circle-outline"></ion-icon> II love potato because potato is the best</div>
-            <div class="feature"> <ion-icon name="checkmark-circle-outline"></ion-icon> II love potato because potato is the best</div>
-            <div class="feature"> <ion-icon name="checkmark-circle-outline"></ion-icon>II love potato</div>
-            <div class="feature"> <ion-icon name="checkmark-circle-outline"></ion-icon> II love potato because potato is the best</div>
-            <div class="feature"> <ion-icon name="checkmark-circle-outline"></ion-icon> II love potato because potato</div>
-        </div>
-        <div class="bandaka"></div>
-    </div>
     </main>
     <footer class="footer">
         <p class="footer-text">Developed with <ion-icon name="heart" class="footer-heart"></ion-icon> <i class="fa-regular fa-copyright"></i> 2023</p>
     </footer>
     </div>
-    <script src="../javascript/darkmode.js"></script>
+    <div class="fav-container">
+        <h3 class="fav-title">My Favourite Topics</h3>
+        <div class="fav-cards-container">
+        </div>
+    </div>
+    <script src="../javascript//fav.js"></script>
+    <script src="../javascript/dynamic.js"></script>
+    <script src="../javascript/details.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

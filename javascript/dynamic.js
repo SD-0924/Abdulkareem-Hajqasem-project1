@@ -1,5 +1,14 @@
 let toggleDarkMode = document.querySelector(".color-mode-button");
-
+let toggleFav = document.querySelector(".favourites-button");
+toggleFav.onclick = () => {
+    const fav = document.querySelector(".fav-container");
+    if (fav.style.display === "flex") {
+        fav.style.display = "none";
+    }
+    else {
+        fav.style.display = "flex";
+    }
+}
 toggleDarkMode.onclick = () => {
     document.body.classList.toggle("dark-mode");
 };
@@ -18,7 +27,7 @@ function displayCards(cards) {
     const container = document.querySelector('.cards-container');
     cards.forEach(card => {
         const cardHTML = `
-            <div class="card">
+            <div class="card" id="${card.id}">
                 <div class="img-container">
                     <img src="../assets/${card.image}" alt="${card.topic}">
                 </div>
@@ -43,6 +52,14 @@ function displayCards(cards) {
         `;
         container.innerHTML += cardHTML;
     });
+    let allCards = document.querySelectorAll(".card");
+    allCards.forEach(card => {
+        card.onclick = () => {
+            let cardId = card.getAttribute('id');
+            window.location.href = `./details.html?id=${cardId}`;
+        }
+    })
+    renderFavorites()
 }
 
 document.addEventListener('DOMContentLoaded', fetchCards);
