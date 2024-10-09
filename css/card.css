@@ -61,6 +61,12 @@ img {
     padding-bottom: 7px;
 }
 
+.card-type, .language-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 .author-name{
     color: var(--author-name);
 }

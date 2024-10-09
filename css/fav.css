@@ -1,0 +1,50 @@
+.fav-container{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    flex-direction: column;
+    padding: 15px 30px 15px 30px;
+}
+
+.fav-cards-container{
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+}
+
+.card-info-container-fav {
+    padding: 15px 0 15px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.language-name{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fav-card {
+    background-color: var(--button-bg-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow:  0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.fav-img-container {
+    height: 100px;
+    overflow: hidden;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
