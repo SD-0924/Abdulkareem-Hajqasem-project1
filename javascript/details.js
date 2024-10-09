@@ -74,12 +74,16 @@ const displayCardDetails = (card) => {
             <div class="bandaka"></div>
         </div>
     `;
-    
+
     container.innerHTML += detailsHTML;
 
     const favButton = document.querySelector(".add-to-favourits-button");
+    const favButtonMobile = document.querySelector(".add-to-favourits-button-mobile");
     favButton.onclick = () => {
-        addToFavorites(card); 
+        addToFavorites(card);
+    };
+    favButtonMobile.onclick = () => {
+        addToFavorites(card);
     };
 }
 
