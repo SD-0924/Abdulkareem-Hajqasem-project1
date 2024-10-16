@@ -7,6 +7,7 @@
     --button-bg-color: white;
     --border-color: #DDDDDD;
     --body-test-color: #333333;
+    --button-color: lightgray;
     --author-name: #7c7c7c;
     --details-title:#1c9e72;
 
@@ -22,6 +23,7 @@
     --border-color: #000000;
     --body-test-color: #EDEDED;
     --author-name: #7c7c7c;
+    --button-color: #333333;
 }
 
 /** Global Styles **/

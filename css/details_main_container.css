@@ -19,6 +19,11 @@
     border-radius: 5px;
 }
 
+.checkmark{
+    color: #03C180;
+    font-size: 20px;
+}
+
 .feature,
 .feature-title {
     height: fit-content;
@@ -86,22 +91,6 @@
     display: none;
 }
 
-.add-to-favourits-button {
-    background-color: var(--highlight-green);
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.add-to-favourits-button-span {
-    display: flex;
-    align-items: center;
-    color: white;
-    gap: 6px;
-    font-size: 15px;
-}
-
 .add-to-favourits-button__heart {
     font-size: 25px;
 }
@@ -140,7 +129,7 @@
 
 @media (max-width: 750px) {
     .language-info-card-container {
-        background-color: unset;
+        background-color: #282828;
         position: relative;
         filter: brightness(1);
     }

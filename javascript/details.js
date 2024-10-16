@@ -1,6 +1,6 @@
-
 const urlParams = new URLSearchParams(window.location.search);
 const cardId = urlParams.get('id');
+const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 async function fetchCardDetails() {
     try {
@@ -13,11 +13,14 @@ async function fetchCardDetails() {
 }
 
 const displayCardDetails = (card) => {
+    const includeCard = favorites.find(fav => fav.id === card.id); 
+    const favButtonText = includeCard ? "Remove from Favourites" : "Add to Favourites"; 
+
     const container = document.querySelector('.details-main-container');
 
     let subtopicsHTML = '';
     card.subtopics.forEach(subtopic => {
-        subtopicsHTML += `<div class="feature"><ion-icon name="checkmark-circle-outline"></ion-icon> ${subtopic}</div>`;
+        subtopicsHTML += `<div class="feature"><ion-icon name="checkmark-circle-outline" class="checkmark"></ion-icon> ${subtopic}</div>`;
     });
 
     const detailsHTML = `
@@ -45,18 +48,18 @@ const displayCardDetails = (card) => {
                 <div class="card-info-container">
                     <div class="card-title-container">
                         <p class="author-card">${card.topic}</p>
+                        <span class="card__by">by</span>
                         <div class="link-container">
-                            <span>by</span>
-                            <a href="">${card.name}</a>
+                            <a href="" class="card__author">${card.name}</a>
                         </div>
                     </div>
                     <div class="favourites-button-container">
                         <p class="interested-text">Interested about this topic?</p>
                         <button class="add-to-favourits-button" id=${card.id}>
-                            <span class="add-to-favourits-button-span">Add to Favourites <ion-icon name="heart-outline" class="add-to-favourits-button__heart"></ion-icon></span>
+                            <span class="add-to-favourits-button-span">${favButtonText}<ion-icon name="heart-outline" class="add-to-favourits-button__heart"></ion-icon></span>
                         </button>
                         <div class="creadits-container">
-                            <span class="credits">Credits</span>
+                            <span class="credits">Unlimited Credits</span>
                         </div>
                     </div>
                 </div>
@@ -64,7 +67,7 @@ const displayCardDetails = (card) => {
             <button class="add-to-favourits-button-mobile">
                 <span class="add-to-favourits-button__span"><ion-icon name="heart-outline" class="favourites-heart"></ion-icon></span>
             </button>
-            <img src="../assets/javascript.jpg" alt="" class="image" />
+            <img src="../assets/${card.image}" alt="" class="image" />
         </div>
         <div class="features-main-container">
             <div class="features-container">

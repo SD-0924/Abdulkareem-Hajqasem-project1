@@ -1,14 +1,22 @@
 const addToFavorites = (card) => {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    
-    if (!favorites.find(fav => fav.id === card.id)) {
+    const fav = document.querySelector(".fav-container");
+    const existingCard = favorites.findIndex(fav => fav.id === card.id);
+        spanElement=document.querySelector(".add-to-favourits-button-span");
+    if (existingCard === -1) {
         favorites.push(card); 
         localStorage.setItem('favorites', JSON.stringify(favorites));
+        spanElement.innerHTML = `Remove from favorites <ion-icon name="heart-outline" class="add-to-favourits-button__heart"></ion-icon>`
+        fav.style.display = "flex";
         renderFavorites();
     } else {
-        alert(`${card.topic} is already in your favorites.`);
+        favorites.splice(existingCard, 1); 
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+        spanElement.innerHTML = `Add to Favorites <ion-icon name="heart-outline" class="add-to-favourits-button__heart"></ion-icon>`
+        renderFavorites(); 
     }
 };
+
 
 const renderFavorites = () => {
     const favContainer = document.querySelector(".fav-cards-container");
