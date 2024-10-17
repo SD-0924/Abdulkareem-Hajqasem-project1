@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Topics</title>
+    <title>Triangle Navbar</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/fav.css">
-    <script src="../javascript/dynamic.js"></script>
+    <link rel="stylesheet" href="../css//fav.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -22,17 +26,17 @@
                     <a href="./home.html" class="header-title">Web Topics</a>
                     <div class="header-buttons-container">
                         <button class="color-mode-button">
-                            <ion-icon name="moon-outline" class="icon"></ion-icon><span class="color-button-text">Dark Mode</span>
-                        </button>
-                        <button class="favourites-button"> 
-                            <ion-icon name="heart-outline" class="icon"></ion-icon><span class="favourites-button-text">Favourites</span>
-                        </button>
+                            <ion-icon name="moon-outline" class="icon"></ion-icon><span class="color-button-text">Dark
+                                mode</span></button>
+                        <button class="favourites-button"> <ion-icon name="heart-outline" class="icon"></ion-icon><span
+                                class="favourites-button-text">Favourites</span></button>
                     </div>
                 </div>
                 <div class="bottom-nav">
                     <div class="triangle-green"></div>
                     <div class="triangle-blue"></div>
-                    <div class="text-container"></div>
+                    <div class="text-container">
+                    </div>
                     <div class="welcome-container">
                         <h1 class="welcome-text">Welcome to our website!</h1>
                         <p class="website-info-text">We have a new design that's fresh, modern, and easy to use.</p>
@@ -67,15 +71,24 @@
                     </div>
                 </div>
             </form>
-            <h2 class="topics-title">Web Topics</h2>
-            <div class="cards-container"></div>
+            <h2 class="topics-title">"24" Web Topics Found</h2>
+            <div class="cards-container">
+                </div>
         </main>
         <footer class="footer">
-            <p class="footer-text">Developed with <ion-icon name="heart" class="footer-heart"></ion-icon> &copy; 2023</p>
+            <p class="footer-text">Developed with <ion-icon name="heart" class="footer-heart"></ion-icon> <i
+                    class="fa-regular fa-copyright"></i> 2023</p>
         </footer>
     </div>
-    <script src="../javascript/fav.js"></script>
+    <div class="fav-container">
+        <h3 class="fav-title">My Favourite Topics</h3>
+        <div class="fav-cards-container">
+        </div>
+    </div>
+    <script src="../javascript//fav.js"></script>
+    <script src="../javascript/dynamic.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>

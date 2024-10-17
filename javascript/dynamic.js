@@ -1,5 +1,38 @@
-let cardsData = [];
-let filteredCards = [];
+
+let getToggleDarkMode = () => document.querySelector(".color-mode-button");
+
+getToggleDarkMode().onclick = () => {
+    document.body.classList.toggle("dark-mode");
+};
+
+let toggleFav = document.querySelector(".favourites-button");
+toggleFav.onclick = () => {
+    const fav = document.querySelector(".fav-container");
+    if (fav.style.display === "flex") {
+        fav.style.display = "none";
+    }
+    else {
+        fav.style.display = "flex";
+    }
+};
+
+document.querySelector('.color-mode-button').addEventListener('click', function () {
+    const moonIcon = this.querySelector('ion-icon');
+    if (moonIcon.style.color === 'orange') {
+        moonIcon.style.color = '#333333';
+    } else {
+        moonIcon.style.color = 'orange';
+    }
+});
+
+document.querySelector('.favourites-button').addEventListener('click', function () {
+    const heartIcon = this.querySelector('ion-icon');
+    if (heartIcon.style.color === 'red') {
+        heartIcon.style.color = 'var(--body-test-color)';
+    } else {
+        heartIcon.style.color = 'red';
+    }
+});
 
 async function fetchCards() {
     try {
@@ -34,6 +67,7 @@ function displayCards(cards) {
         container.innerHTML += cardHTML;
     });
     addCardClickEvent();
+    renderFavorites();
 }
 
 function createCardHTML(card) {
@@ -111,7 +145,18 @@ function applySearchFilterSort() {
     }
 
     if (sortBy === 'title-asc') {
-        filteredCards.sort((a, b) => a.topic.localeCompare(b.topic));
+        filteredCards.sort((a, b) => {
+            if(a.topic>b.topic){
+                return 1
+            }
+            else if(b.topic>a.topic){
+                return -1
+            }
+            else{
+                return 0
+            }
+        
+        });
     } else if (sortBy === 'title-desc') {
         filteredCards.sort((a, b) => b.topic.localeCompare(a.topic));
     } else if (sortBy === 'author-asc') {
