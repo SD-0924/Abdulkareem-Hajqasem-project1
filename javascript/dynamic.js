@@ -1,56 +1,39 @@
-let getToggleDarkMode = () => document.querySelector(".color-mode-button");
-
-getToggleDarkMode().onclick = () => {
-    document.body.classList.toggle("dark-mode");
-};
-
-let toggleFav = document.querySelector(".favourites-button");
-toggleFav.onclick = () => {
-    const fav = document.querySelector(".fav-container");
-    if (fav.style.display === "flex") {
-        fav.style.display = "none";
-    }
-    else {
-        fav.style.display = "flex";
-    }
-};
-
-document.querySelector('.color-mode-button').addEventListener('click', function () {
-    const moonIcon = this.querySelector('ion-icon');
-    if (moonIcon.style.color === 'orange') {
-        moonIcon.style.color = '#333333';
-    } else {
-        moonIcon.style.color = 'orange';
-    }
-});
-
-document.querySelector('.favourites-button').addEventListener('click', function () {
-    const heartIcon = this.querySelector('ion-icon');
-    if (heartIcon.style.color === 'red') {
-        heartIcon.style.color = 'var(--body-test-color)';
-    } else {
-        heartIcon.style.color = 'red';
-    }
-});
+let cardsData = [];
+let filteredCards = [];
 
 async function fetchCards() {
     try {
         const response = await fetch('http://localhost:3000/cards');
         const data = await response.json();
-        displayCards(data);
+        cardsData = data;
+        filteredCards = data;
+        populateFilterDropdown(data);
+        displayCards(filteredCards);
+        enableSearchAndFilter();
     } catch (error) {
         console.error("Error fetching data: ", error);
     }
 }
 
+function populateFilterDropdown(cards) {
+    const filterDropdown = document.querySelector('#filter');
+    const categories = [...new Set(cards.map(card => card.category))];
+
+    categories.forEach(category => {
+        const optionHTML = `<option value="${category}">${category}</option>`;
+        filterDropdown.innerHTML += optionHTML;
+    });
+}
+
+
 function displayCards(cards) {
     const container = document.querySelector('.cards-container');
+    container.innerHTML = '';
     cards.forEach(card => {
         const cardHTML = createCardHTML(card);
         container.innerHTML += cardHTML;
     });
     addCardClickEvent();
-    renderFavorites();
 }
 
 function createCardHTML(card) {
@@ -80,8 +63,8 @@ function createRateAuthorContainer(card) {
 }
 
 function createStarRating(rating) {
-    const fullStars = Math.floor(rating); 
-    const hasHalfStar = rating % 1 !== 0; 
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
     let starsHTML = '';
 
     for (let i = 0; i < fullStars; i++) {
@@ -99,6 +82,46 @@ function createStarRating(rating) {
     return `<div class="stars">${starsHTML}</div>`;
 }
 
+function enableSearchAndFilter() {
+    const searchInput = document.querySelector('.search-input');
+    const filterDropdown = document.querySelector('#filter');
+    const sortDropdown = document.querySelector('#sort');
+
+    let debounceTimeout;
+    searchInput.addEventListener('input', () => {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            applySearchFilterSort();
+        }, 300);
+    });
+
+    filterDropdown.addEventListener('change', applySearchFilterSort);
+    sortDropdown.addEventListener('change', applySearchFilterSort);
+}
+
+function applySearchFilterSort() {
+    const searchTerm = document.querySelector('.search-input').value.toLowerCase();
+    const selectedCategory = document.querySelector('#filter').value;
+    const sortBy = document.querySelector('#sort').value;
+
+    filteredCards = cardsData.filter(card => card.topic.toLowerCase().includes(searchTerm));
+
+    if (selectedCategory !== 'default') {
+        filteredCards = filteredCards.filter(card => card.category === selectedCategory);
+    }
+
+    if (sortBy === 'title-asc') {
+        filteredCards.sort((a, b) => a.topic.localeCompare(b.topic));
+    } else if (sortBy === 'title-desc') {
+        filteredCards.sort((a, b) => b.topic.localeCompare(a.topic));
+    } else if (sortBy === 'author-asc') {
+        filteredCards.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortBy === 'author-desc') {
+        filteredCards.sort((a, b) => b.name.localeCompare(a.name));
+    }
+    displayCards(filteredCards);
+}
+
 function addCardClickEvent() {
     let allCards = document.querySelectorAll(".card");
     allCards.forEach(card => {
@@ -108,7 +131,5 @@ function addCardClickEvent() {
         };
     });
 }
-
-
 
 document.addEventListener('DOMContentLoaded', fetchCards);
