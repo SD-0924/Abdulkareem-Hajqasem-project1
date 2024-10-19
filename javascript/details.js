@@ -4,17 +4,21 @@ const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 async function fetchCardDetails() {
     try {
-        const response = await fetch(`http://localhost:3000/cards/${cardId}`);
+        const loader = document.getElementById("loader")
+        loader.style.display = "block"
+        const response = await fetch(`https://tap-web-1.herokuapp.com/topics/details/${cardId}`);
         const card = await response.json();
         displayCardDetails(card);
     } catch (error) {
         console.error("Error fetching card details: ", error);
+    } finally {
+        loader.style.display = 'none';
     }
 }
 
 const displayCardDetails = (card) => {
-    const includeCard = favorites.find(fav => fav.id === card.id); 
-    const favButtonText = includeCard ? "Remove from Favourites" : "Add to Favourites"; 
+    const includeCard = favorites.find(fav => fav.id === card.id);
+    const favButtonText = includeCard ? "Remove from Favourites" : "Add to Favourites";
 
     const container = document.querySelector('.details-main-container');
 

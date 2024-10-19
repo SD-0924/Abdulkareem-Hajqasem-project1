@@ -35,8 +35,11 @@ document.querySelector('.favourites-button').addEventListener('click', function 
 });
 
 async function fetchCards() {
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block'; 
+
     try {
-        const response = await fetch('http://localhost:3000/cards');
+        const response = await fetch('https://tap-web-1.herokuapp.com/topics/list');
         const data = await response.json();
         cardsData = data;
         filteredCards = data;
@@ -45,8 +48,11 @@ async function fetchCards() {
         enableSearchAndFilter();
     } catch (error) {
         console.error("Error fetching data: ", error);
+    } finally {
+        loader.style.display = 'none'; 
     }
 }
+
 
 function populateFilterDropdown(cards) {
     const filterDropdown = document.querySelector('#filter');
