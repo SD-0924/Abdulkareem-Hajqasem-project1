@@ -1,4 +1,5 @@
 /** Global Variables **/
+
 :root {
     /* Color Palette */
     --primary-color: #0768AC;
@@ -28,14 +29,12 @@
 
 /** Global Styles **/
 * {
-    font-family: var(--main-font);
+    font-family: var(--main-font) !important;
 }
 
 body,
 html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+    line-height: normal !important;
 }
 
 .icon{
@@ -48,16 +47,11 @@ h3,
 h4,
 p {
     margin: 0;
+    margin-bottom: 0 !important;
 }
 
 span{
     color: var(--body-test-color);
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
 }
 
 @media (min-width: 2000px) {

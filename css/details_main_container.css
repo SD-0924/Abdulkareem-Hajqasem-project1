@@ -4,14 +4,10 @@
 }
 
 .features-main-container {
-    display: flex;
-    justify-content: center;
     gap: 30px;
 }
 
 .features-container {
-    display: flex;
-    flex-direction: column;
     background-color: var(--button-bg-color);
     width: 35%;
     margin-top: 30px;
@@ -28,8 +24,6 @@
 .feature-title {
     height: fit-content;
     padding: 15px 0 15px 25px;
-    display: flex;
-    align-items: center;
     gap: 10px;
     color: var(--body-test-color);
 }
@@ -39,42 +33,26 @@
 }
 
 .favourites-button-container {
-    display: flex;
     border: 1px solid var(--border-color);
-    flex-direction: column;
 }
 
 .language-info-card-container {
-    display: flex;
-    justify-content: center;
     gap: 30px;
     background-color: #333333;
-    position: relative;
 }
 
 .info-main-container {
     width: 35%;
     padding-top: 25px;
     padding-bottom: 25px;
-    color: white;
 }
 
 .info-title {
     padding-bottom: 10px;
 }
 
-.card-name {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
 .star {
     color: gold;
-    padding-bottom: 7px;
-}
-
-.image {
-    display: none;
 }
 
 .by-author-container {
@@ -82,13 +60,7 @@
 }
 
 .by-author {
-    display: flex;
-    align-items: center;
     gap: 4px;
-}
-
-.add-to-favourits-button-mobile {
-    display: none;
 }
 
 .add-to-favourits-button__heart {
@@ -107,7 +79,6 @@
 }
 
 @media (max-width: 1200px) {
-
     .language-info-card-container,
     .features-main-container {
         justify-content: space-between;
@@ -127,7 +98,7 @@
     }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 767px) {
     .language-info-card-container {
         background-color: #282828;
         position: relative;
@@ -149,7 +120,6 @@
     }
 
     .image {
-        display: block;
         position: absolute;
         top: 0;
         left: 0;
@@ -165,12 +135,12 @@
     }
 
     .add-to-favourits-button-mobile {
+        display: flex;
         position: absolute;
         top: 10px;
         right: 10px;
         background-color: #3da58f;
         border: none;
-        display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 4px;

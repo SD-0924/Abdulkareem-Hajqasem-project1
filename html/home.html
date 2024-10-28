@@ -1,95 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Triangle Navbar</title>
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/card.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="../css//fav.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/card.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css//fav.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
-    <div class="main-container">
-        <header>
-            <nav class="navbar">
-                <div class="top-nav">
-                    <a href="./home.html" class="header-title">Web Topics</a>
-                    <div class="header-buttons-container">
-                        <button class="color-mode-button">
-                            <ion-icon name="moon-outline" class="icon"></ion-icon><span class="color-button-text">Dark
-                                mode</span></button>
-                        <button class="favourites-button"> <ion-icon name="heart-outline" class="icon"></ion-icon><span
-                                class="favourites-button-text">Favourites</span></button>
-                    </div>
-                </div>
-                <div class="bottom-nav">
-                    <div class="triangle-green"></div>
-                    <div class="triangle-blue"></div>
-                    <div class="text-container">
-                    </div>
-                    <div class="welcome-container">
-                        <h1 class="welcome-text">Welcome to our website!</h1>
-                        <p class="website-info-text">We have a new design that's fresh, modern, and easy to use.</p>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <main class="content-container">
-            <div class="loader" id="loader"></div>
-            <form action="">
-                <div class="search-container">
-                    <div class="search">
-                        <ion-icon name="search-outline" class="icon"></ion-icon>
-                        <input type="search" class="search-input" placeholder="Search for web topics...">
-                    </div>
-                    <div class="sort-filter-container">
-                        <div class="sort-dropdown-container">
-                            <label for="sort" class="label">Sort by:</label>
-                            <select name="sort" id="sort" class="sort-dropdown">
-                                <option value="default">Default</option>
-                                <option value="title-asc">Topic Title (A-Z)</option>
-                                <option value="title-desc">Topic Title (Z-A)</option>
-                                <option value="author-asc">Author Name (A-Z)</option>
-                                <option value="author-desc">Author Name (Z-A)</option>
-                            </select>
-                        </div>
-                        <div class="filter-dropdown-container">
-                            <label for="filter" class="label">Filter by:</label>
-                            <select name="filter" id="filter" class="filter-dropdown">
-                                <option value="default">All Categories</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <h2 class="topics-title">"24" Web Topics Found</h2>
-            <div class="cards-container">
-                </div>
-        </main>
-        <footer class="footer">
-            <p class="footer-text">Developed with <ion-icon name="heart" class="footer-heart"></ion-icon> <i
-                    class="fa-regular fa-copyright"></i> 2023</p>
-        </footer>
+  <body class=" m-0 p-0 overflow-x-hidden">
+    <div class="main-container d-flex flex-column vh-100 ">
+      <header>
+        <nav class="navbarr">
+          <div class="top-nav d-flex justify-content-between align-items-center">
+            <a href="./home.html" class="header-title fw-bold text-decoration-none m-0">Web Topics</a>
+            <div class="header-buttons-container d-flex justify-content-between align-items-center">
+              <button class="color-mode-button d-flex align-items-center">
+                <ion-icon name="moon-outline" class="icon"></ion-icon
+                ><span class="color-button-text">Dark mode</span>
+              </button>
+              <button class="favourites-button d-flex align-items-center">
+                <ion-icon name="heart-outline" class="icon"></ion-icon
+                ><span class="favourites-button-text">Favourites</span>
+              </button>
+            </div>
+          </div>
+          <div class="bottom-nav d-flex justify-content-center position-relative">
+            <div class="triangle-green position-absolute vw-100"></div>
+            <div class="triangle-blue vw-100 position-absolute"></div>
+            <div class="text-container"></div>
+            <div class="welcome-container">
+              <h1 class="welcome-text m-0 fw-bold">Welcome to our website!</h1>
+              <p class="website-info-text m-0">
+                We have a new design that's fresh, modern, and easy to use.
+              </p>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="content-container ">
+        <div class="loader position-absolute" id="loader"></div>
+        <form action="">
+          <div class="search-container w-100 d-grid">
+            <div class="search d-flex align-items-center">
+              <ion-icon name="search-outline" class="icon"></ion-icon>
+              <input
+                type="search"
+                class="search-input border-0"
+                placeholder="Search for web topics..."
+              />
+            </div>
+            <div class="sort-filter-container d-flex justify-content-between">
+              <div class="sort-dropdown-container d-flex flex-column w-50">
+                <label for="sort" class="label">Sort by:</label>
+                <select name="sort" id="sort" class="sort-dropdown w-100">
+                  <option value="default">Default</option>
+                  <option value="title-asc">Topic Title (A-Z)</option>
+                  <option value="title-desc">Topic Title (Z-A)</option>
+                  <option value="author-asc">Author Name (A-Z)</option>
+                  <option value="author-desc">Author Name (Z-A)</option>
+                </select>
+              </div>
+              <div class="filter-dropdown-container d-flex flex-column w-50">
+                <label for="filter" class="label">Filter by:</label>
+                <select name="filter" id="filter" class="filter-dropdown w-100">
+                  <option value="default">All Categories</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+        <h2 class="topics-title">"24" Web Topics Found</h2>
+        <div class="cards-container w-100 row g-0"></div>
+      </main>
+      <footer class="footer d-flex justify-content-center align-items-center">
+        <p class="footer-text d-flex align-items-center">
+          Developed with
+          <ion-icon name="heart" class="footer-heart"></ion-icon>
+          <i class="fa-regular fa-copyright"></i> 2023
+        </p>
+      </footer>
     </div>
-    <div class="fav-container">
-        <h3 class="fav-title">My Favourite Topics</h3>
-        <div class="fav-cards-container">
-        </div>
+    <div class="fav-container position-fixed flex-column w-100 overflow-x-scroll d-none">
+      <h3 class="fav-title">My Favourite Topics</h3>
+      <div class="fav-cards-container d-flex"></div>
     </div>
     <script src="../javascript//fav.js"></script>
     <script src="../javascript/dynamic.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
-
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

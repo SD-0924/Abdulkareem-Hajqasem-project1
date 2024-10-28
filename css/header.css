@@ -6,14 +6,14 @@
 }
 
 .welcome-text {
-    margin: 0;
     color: var(--highlight-green);
+    font-size: large;
+    line-height: 35px;
 }
 
 .website-info-text {
-    margin: 0;
     font-size: 1rem;
-    color: var(--body-test-color);
+    color: var(--body-test-color) !important;
     line-height: 14px;
 }
 
@@ -30,9 +30,6 @@
 
 
 .header-buttons-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 5px;
 }
 
@@ -42,44 +39,30 @@
     background-color: var(--button-bg-color);
     border: 1px solid var(--border-color);
     border-radius: 3px;
-    display: flex;
     gap: 5px;
-    align-items: center;
+    font-size: small;
+    line-height: normal;
 }
 
 .header-title {
     color: var(--primary-color);
-    font-weight: bold;
-    text-decoration: none;
     font-size: 20px;
 }
 
-.navbar {
+.navbarr {
     background-color: var(--button-bg-color);
     padding-bottom: 30px;
 }
 
 .top-nav {
-    display: flex;
-    justify-content: space-between;
     padding: 20px 45px;
-    align-items: center;
-}
-
-.header-title {
-    margin: 0;
 }
 
 .bottom-nav {
     background-color: var(--button-bg-color);
-    position: relative;
-    display: flex;
-    justify-content: center;
 }
 
 .triangle-green {
-    position: absolute;
-    width: 100vw;
     height: 75px;
     background-color: var(--highlight-green);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 0%);
@@ -87,8 +70,6 @@
 }
 
 .triangle-blue {
-    position: absolute;
-    width: 100vw;
     height: 75px;
     background: linear-gradient(to right, var(--primary-color), var(--highlight-green));
     clip-path: polygon(0 0, 90% 0, 0 85%, 0% 100%);

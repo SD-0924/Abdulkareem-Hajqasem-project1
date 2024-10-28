@@ -26,13 +26,13 @@ const renderFavorites = () => {
 
     favorites.forEach(card => {
         const favCardHTML = `
-            <div class="fav-card">
-                <div class="fav-img-container">
-                    <img src="../assets/${card.image}" alt="">
+            <div class="fav-card d-flex flex-column overflow-hidden">
+                <div class="fav-img-container w-100 overflow-hidden">
+                    <img class="w-100 h-100 object-fit-cover" src="../assets/${card.image}" alt="">
                 </div>
-                <div class="card-info-container-fav">
+                <div class="card-info-container-fav d-flex flex-column">
                     <div class="card-title-container">
-                        <h3 class="language-name">${card.topic}</h3>
+                        <h3 class="language-name overflow-hidden">${card.topic}</h3>
                     </div>
                     <div class="rate-author-container">
                         <div class="stars">
